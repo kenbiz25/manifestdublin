@@ -1,73 +1,84 @@
-# Welcome to your Lovable project
+Manifest Dublin Church Website
+A modern, responsive church website built with React, Vite, and Tailwind CSS. Designed for Manifest Dublin to provide an engaging online presence with sections for Home, About, Ministries, Events, Live Services, Give, and Contact.
 
-## Project info
+✨ Features
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Responsive Design – Mobile-friendly layout using Tailwind CSS.
+Hero Section – Full-width background image with welcome text and CTAs.
+Smooth Navigation – Sticky navbar with smooth scrolling.
+Dynamic Sections:
 
-## How can I edit this code?
+About Us
+Ministries Grid
+Events Calendar
+Live & Previous Services (YouTube Embed)
+Giving Section
+Contact Form
 
-There are several ways of editing your application.
 
-**Use Lovable**
+SEO Ready – Meta tags and Open Graph for social sharing.
+Performance Optimized – Built with Vite for fast loading.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+🛠 Tech Stack
 
-**Use your preferred IDE**
+Frontend: React + Vite
+Styling: Tailwind CSS
+Icons: SVG-based social icons
+Deployment: cPanel (static build)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+📂 Project Structure
+MANIFESTDUBLIN/
+├── dist/                # Production build output (upload to cPanel)
+│   ├── assets/          # Minified CSS, JS, and images
+│   ├── index.html       # Entry point for the built site
+│   ├── favicon.ico
+│   ├── robots.txt
+│
+├── public/              # Static assets served as-is
+│   ├── favicon.ico
+│   ├── placeholder.svg
+│   ├── robots.txt
+│
+├── src/                 # Source code (edit here for changes)
+│   ├── assets/          # Images, fonts, etc.
+│   ├── components/      # Reusable UI components
+│   │   ├── ui/          # UI primitives (accordion, button, etc.)
+│   │   ├── AboutSection.tsx
+│   │   ├── ContactSection.tsx
+│   │   ├── EventsSection.tsx
+│   │   ├── Footer.tsx
+│   │   ├── GiveSection.tsx
+│   │   ├── Hero.tsx
+│   │   ├── LiveSection.tsx
+│   │   ├── MinistriesSection.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── NavLink.tsx
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Utility functions
+│   ├── pages/           # Page-level components
+│   ├── App.tsx          # Main app component
+│   ├── main.tsx         # React entry point
+│   ├── index.css        # Tailwind base styles
+│
+├── .gitignore           # Ignore node_modules, dist, env files
+├── .gitattributes       # Normalize line endings
+├── package.json         # Scripts & dependencies
+├── tailwind.config.ts   # Tailwind theme config
+├── vite.config.ts       # Vite build config
+├── tsconfig.json        # TypeScript config
+└── README.md            # Project documentation
 
-Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+🚀 Getting Started
+1. Clone the Repository
+Shellgit clone https://github.com/YOUR-USERNAME/manifestdublin.gitcd manifestdublinShow more lines
+2. Install Dependencies
+Shellnpm installShow more lines
+3. Run Development Server
+Shellnpm run devShow more lines
+Visit http://localhost:5173.
+4. Build for Production
+Shellnpm run buildShow more lines
+The build output will be in the dist/ folder.
