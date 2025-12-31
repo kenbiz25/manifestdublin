@@ -29,6 +29,7 @@ Deployment: cPanel (static build)
 
 
 📂 Project Structure
+```
 MANIFESTDUBLIN/
 ├── dist/                # Production build output (upload to cPanel)
 │   ├── assets/          # Minified CSS, JS, and images
@@ -69,7 +70,7 @@ MANIFESTDUBLIN/
 ├── vite.config.ts       # Vite build config
 ├── tsconfig.json        # TypeScript config
 └── README.md            # Project documentation
-
+```
 
 🚀 Getting Started
 1. Clone the Repository
