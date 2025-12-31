@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Youtube } from "lucide-react";
+import { Instagram, Youtube, Whatsapp, Spotify } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/church-hero.jpg";
 
@@ -80,15 +80,6 @@ const Hero = () => {
           style={{ animationDelay: "1s" }}
         >
           <a
-            href="https://facebook.com/manifestdublin"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary-foreground/70 hover:text-primary-foreground hover:scale-110 transition-all duration-300"
-            aria-label="Facebook"
-          >
-            <Facebook size={26} />
-          </a>
-          <a
             href="https://instagram.com/manifestdublin"
             target="_blank"
             rel="noopener noreferrer"
@@ -105,6 +96,24 @@ const Hero = () => {
             aria-label="YouTube"
           >
             <Youtube size={28} />
+          </a>
+          <a
+            href="https://chat.whatsapp.com/LhrpT6i2BluJRYkZBumOY5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-foreground/70 hover:text-primary-foreground hover:scale-110 transition-all duration-300"
+            aria-label="Whatsapp"
+          >
+            <Whatsapp size={26} />
+          </a>
+           <a
+            href="https://open.spotify.com/show/4xo1iU8MMNe6Ng1ZmUcTpp?si=PoLq4JLeRSGL0KUWYs4YwA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-foreground/70 hover:text-primary-foreground hover:scale-110 transition-all duration-300"
+            aria-label="Whatsapp"
+          >
+            <spotify size={26} />
           </a>
         </div>
 
