@@ -1,4 +1,6 @@
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+// src/components/Footer.tsx
+import { Mail, Phone, MapPin } from "lucide-react";
+import { FaFacebook, FaInstagram, FaYoutube, FaWhatsapp, FaSpotify } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -12,32 +14,41 @@ const Footer = () => {
               We are a welcoming community of believers committed to worship, discipleship, and serving our neighbors with the love of Christ.
             </p>
             <div className="flex gap-4">
-              <a
-                href="https://facebook.com"
+                <a
+                href="https://instagram.com/manifestdublin"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-all duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-all duration-300"
+                className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-[#E4405F] transition-all duration-300"
                 aria-label="Instagram"
               >
-                <Instagram size={18} />
+                <FaInstagram size={18} />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@manifestdublin"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-all duration-300"
+                className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-[#FF0000] transition-all duration-300"
                 aria-label="YouTube"
               >
-                <Youtube size={18} />
+                <FaYoutube size={18} />
+              </a>
+              <a
+                href="https://chat.whatsapp.com/LhrpT6i2BluJRYkZBumOY5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-[#25D366] transition-all duration-300"
+                aria-label="Whatsapp"
+              >
+                <FaWhatsapp size={26} />
+              </a>
+              <a
+                href="https://open.spotify.com/show/4xo1iU8MMNe6Ng1ZmUcTpp?si=PoLq4JLeRSGL0KUWYs4YwA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-[#1DB954] transition-all duration-300"
+                aria-label="Spotify"
+              >
+                <FaSpotify size={26} />
               </a>
             </div>
           </div>
@@ -46,13 +57,19 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-3">
-              {["About Us", "Services", "Ministries", "Events", "Give"].map((link) => (
-                <li key={link}>
+              {[
+                { label: "About Us", href: "#about" },
+                { label: "Services", href: "#services" },
+                { label: "Ministries", href: "#ministries" },
+                { label: "Events", href: "#events" },
+                { label: "Give", href: "/get-in-touch" },
+              ].map((link) => (
+                <li key={link.label}>
                   <a
-                    href={`#${link.toLowerCase().replace(" ", "-")}`}
+                    href={link.href}
                     className="text-primary-foreground/70 hover:text-gold transition-colors duration-200"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}

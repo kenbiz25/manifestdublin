@@ -1,22 +1,19 @@
-import { Instagram, Youtube, Whatsapp, Spotify } from "lucide-react";
+import { FaInstagram, FaYoutube, FaWhatsapp, FaSpotify } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/church-hero.jpg";
+
+const heroImage = "/Manifest.jpeg";
 
 const Hero = () => {
-  const handleScroll = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
+
+      {/* Center Soft Blur */}
+      <div className="absolute inset-0 hero-soften" />
 
       {/* Dark Gradient Overlay */}
       <div className="absolute inset-0 hero-overlay" />
@@ -59,17 +56,17 @@ const Hero = () => {
               variant="accent" 
               size="lg" 
               className="rounded-full px-8 text-base font-semibold"
-              onClick={() => handleScroll("#contact")}
+              asChild
             >
-              Plan Your Visit
+              <a href="/get-in-touch">Plan Your Visit</a>
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full px-8 text-base font-semibold border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10"
-              onClick={() => handleScroll("#give")}
+              className="rounded-full px-8 text-base font-semibold"
+              asChild
             >
-              Give
+              <a href="/get-in-touch">Give</a>
             </Button>
           </div>
         </div>
@@ -83,49 +80,40 @@ const Hero = () => {
             href="https://instagram.com/manifestdublin"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary-foreground/70 hover:text-primary-foreground hover:scale-110 transition-all duration-300"
+            className="text-primary-foreground/70 hover:text-[#E4405F] hover:scale-110 transition-all duration-300"
             aria-label="Instagram"
           >
-            <Instagram size={26} />
+            <FaInstagram size={32} />
           </a>
           <a
             href="https://youtube.com/@manifestdublin"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary-foreground/70 hover:text-primary-foreground hover:scale-110 transition-all duration-300"
+            className="text-primary-foreground/70 hover:text-[#FF0000] hover:scale-110 transition-all duration-300"
             aria-label="YouTube"
           >
-            <Youtube size={28} />
+            <FaYoutube size={34} />
           </a>
           <a
             href="https://chat.whatsapp.com/LhrpT6i2BluJRYkZBumOY5"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary-foreground/70 hover:text-primary-foreground hover:scale-110 transition-all duration-300"
+            className="text-primary-foreground/70 hover:text-[#25D366] hover:scale-110 transition-all duration-300"
             aria-label="Whatsapp"
           >
-            <Whatsapp size={26} />
+            <FaWhatsapp size={32} />
           </a>
            <a
             href="https://open.spotify.com/show/4xo1iU8MMNe6Ng1ZmUcTpp?si=PoLq4JLeRSGL0KUWYs4YwA"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary-foreground/70 hover:text-primary-foreground hover:scale-110 transition-all duration-300"
+            className="text-primary-foreground/70 hover:text-[#1DB954] hover:scale-110 transition-all duration-300"
             aria-label="Whatsapp"
           >
-            <spotify size={26} />
+            <FaSpotify size={32} />
           </a>
         </div>
 
-        {/* Scroll Indicator */}
-        <div 
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block"
-          aria-hidden="true"
-        >
-          <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full" />
-          </div>
-        </div>
       </div>
     </section>
   );

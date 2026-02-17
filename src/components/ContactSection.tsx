@@ -90,15 +90,15 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="section-heading">Get In Touch</h2>
-          <p className="section-subheading">
+          <p className="section-subheading text-primary">
             We'd love to hear from you. Reach out with questions, prayer requests, 
             or just to say hello.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-stretch">
           {/* Contact Form */}
-          <div className="card-elevated p-8">
+          <div className="card-elevated p-8 h-full">
             <h3 className="font-display font-bold text-primary text-xl mb-6">Send us a message</h3>
             
             {isSuccess ? (
@@ -200,14 +200,14 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
+          <div className="card-elevated p-8 h-full">
+            <div className="h-full flex flex-col">
               <h3 className="font-display font-bold text-primary text-xl mb-6">Contact Information</h3>
-              
+
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-accent" />
+                  <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center shrink-0">
+                    <MapPin className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
                     <p className="font-semibold text-primary">Address</p>
@@ -219,8 +219,8 @@ const ContactSection = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-accent" />
+                  <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center shrink-0">
+                    <Phone className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
                     <p className="font-semibold text-primary">Phone</p>
@@ -234,8 +234,8 @@ const ContactSection = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6 text-accent" />
+                  <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center shrink-0">
+                    <Mail className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
                     <p className="font-semibold text-primary">Email</p>
@@ -249,8 +249,8 @@ const ContactSection = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
-                    <Link2 className="w-6 h-6 text-accent" />
+                  <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center shrink-0">
+                    <Link2 className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
                     <p className="font-semibold text-primary">Links</p>
@@ -265,20 +265,6 @@ const ContactSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Map Embed */}
-            <div className="rounded-xl overflow-hidden shadow-soft h-[250px]">
-              <iframe
-                title="Manifest Dublin Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.7455742879!2d-6.262!3d53.3498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sO&#39;Connell%20Street%2C%20Dublin%2C%20Ireland!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
             </div>
           </div>
         </div>

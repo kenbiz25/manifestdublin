@@ -1,51 +1,53 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
-
 @layer base {
   :root {
-    --background: 225 14% 97%;
-    --foreground: 213 56% 20%;
+    /* Base Colors */
+    --background: 0 0% 100%;           /* White background */
+    --foreground: 0 0% 0%;             /* Black text */
 
     --card: 0 0% 100%;
-    --card-foreground: 213 56% 20%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 213 56% 20%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 213 73% 20%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 0%;                /* Black */
+    --primary-foreground: 0 0% 100%;   /* White text on black */
 
-    --secondary: 225 20% 94%;
-    --secondary-foreground: 213 56% 20%;
+    --secondary: 0 0% 15%;             /* Dark gray for secondary */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 225 20% 94%;
-    --muted-foreground: 213 20% 45%;
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 25%;
 
-    --accent: 42 100% 51%;
-    --accent-foreground: 213 73% 15%;
+    --accent: 30 100% 50%;             /* Orange */
+    --accent-foreground: 0 0% 100%;    /* White text on orange */
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 225 20% 90%;
-    --input: 225 20% 90%;
-    --ring: 213 73% 20%;
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 30 100% 50%;               /* Orange ring for focus */
 
     --radius: 0.75rem;
 
     /* Manifest Dublin Theme Tokens */
-    --navy: 213 73% 20%;
-    --navy-dark: 213 75% 15%;
-    --navy-light: 213 65% 30%;
-    --gold: 42 100% 51%;
-    --gold-light: 45 100% 58%;
-    --gold-dark: 38 100% 45%;
-    --gray-light: 225 14% 97%;
-    --gray-muted: 225 20% 92%;
-    --warm-white: 40 20% 99%;
+    --navy: 0 0% 0%;                   /* Black */
+    --navy-dark: 0 0% 0%;              /* Black */
+    --navy-light: 0 0% 15%;            /* Dark gray */
+    --gold: 30 100% 50%;               /* Orange */
+    --gold-light: 35 100% 55%;         /* Lighter orange */
+    --gold-dark: 25 100% 45%;          /* Darker orange */
+    --gray-light: 0 0% 95%;
+    --gray-muted: 0 0% 85%;
+    --warm-white: 0 0% 100%;
 
     /* Shadows */
     --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.06);
@@ -57,6 +59,7 @@
     --font-display: 'Manrope', sans-serif;
     --font-body: 'Inter', sans-serif;
 
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -68,25 +71,25 @@
   }
 
   .dark {
-    --background: 213 73% 12%;
-    --foreground: 210 40% 98%;
-    --card: 213 73% 15%;
-    --card-foreground: 210 40% 98%;
-    --popover: 213 73% 15%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 42 100% 51%;
-    --primary-foreground: 213 73% 12%;
-    --secondary: 213 60% 20%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 213 60% 20%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 42 100% 51%;
-    --accent-foreground: 213 73% 12%;
+    --background: 0 0% 0%;             /* Black background */
+    --foreground: 0 0% 100%;           /* White text */
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 30 100% 50%;            /* Orange primary in dark mode */
+    --primary-foreground: 0 0% 0%;     /* Black text on orange */
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 30 100% 50%;             /* Orange accent */
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 213 60% 20%;
-    --input: 213 60% 20%;
-    --ring: 42 100% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 30 100% 50%;
   }
 }
 
@@ -111,7 +114,6 @@
     line-height: 1.2;
   }
 
-  /* Focus rings for accessibility */
   :focus-visible {
     @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
   }
@@ -136,12 +138,36 @@
     @apply text-primary-foreground;
   }
 
+  .navbar-light .nav-link {
+    @apply text-primary/80 hover:text-primary;
+  }
+
+  .navbar-light .nav-link-active {
+    @apply text-primary;
+  }
+
   .hero-overlay {
     background: linear-gradient(
       to bottom,
-      hsl(213 73% 15% / 0.7) 0%,
-      hsl(213 73% 12% / 0.8) 100%
+      hsl(0 0% 0% / 0.7) 0%,   /* Black overlay */
+      hsl(0 0% 0% / 0.8) 100%
     );
+  }
+
+  .hero-bg {
+    transform-origin: center;
+    animation: heroZoom 22s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  .hero-soften {
+    background: radial-gradient(
+      circle at center,
+      rgba(128, 128, 128, 0.28) 0%,
+      rgba(128, 128, 128, 0.18) 45%,
+      rgba(128, 128, 128, 0) 70%
+    );
+    backdrop-filter: blur(1.5px);
   }
 
   .section-padding {
@@ -186,9 +212,49 @@
     @apply bg-primary-foreground/20 scale-105;
   }
 
-  /* Body scroll lock for mobile menu */
   body.menu-open {
     overflow: hidden;
+  }
+
+  /* Animated page background — subtle floating glow orbs */
+  .page-bg {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 50%, hsl(0 0% 100%) 100%);
+  }
+
+  .page-bg::before,
+  .page-bg::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(100px);
+    will-change: transform;
+  }
+
+  .page-bg::before {
+    width: 600px;
+    height: 600px;
+    top: -80px;
+    right: -120px;
+    background: radial-gradient(circle, hsl(30 100% 50% / 0.07) 0%, transparent 70%);
+    animation: floatOrb1 18s ease-in-out infinite alternate;
+  }
+
+  .page-bg::after {
+    width: 500px;
+    height: 500px;
+    bottom: 10%;
+    left: -100px;
+    background: radial-gradient(circle, hsl(0 0% 0% / 0.03) 0%, transparent 70%);
+    animation: floatOrb2 22s ease-in-out infinite alternate;
+  }
+
+  .page-bg > * {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -245,6 +311,39 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes heroZoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes floatOrb1 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-60px, 80px) scale(1.15);
+    }
+    100% {
+      transform: translate(40px, 160px) scale(0.95);
+    }
+  }
+
+  @keyframes floatOrb2 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(80px, -60px) scale(1.1);
+    }
+    100% {
+      transform: translate(-40px, -120px) scale(1.05);
     }
   }
 }
