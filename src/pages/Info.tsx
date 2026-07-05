@@ -95,7 +95,7 @@ const amenities = [
   { icon: Coffee, label: "Kitchen Access", description: "Tea & coffee facilities" },
   { icon: Users, label: "Seats up to 50", description: "Flexible seating" },
   { icon: Clock, label: "Flexible Hours", description: "7am – 9pm daily" },
-  { icon: MapPin, label: "Central Location", description: "O'Connell Street, Dublin" },
+  { icon: MapPin, label: "Central Location", description: "Pearse St, Dublin" },
 ];
 
 const Info = () => {

@@ -5,10 +5,10 @@ import { useAuth } from "@/contexts/AuthContext";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "Book", href: "/bookings" },
-  { label: "Info & Gallery", href: "/info" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Checklist", href: "/checklist" },
+  { label: "Book", href: "/bookings", disabled: true },
+  { label: "Info & Gallery", href: "/info", disabled: true },
+  { label: "Pricing", href: "/pricing", disabled: true },
+  { label: "Checklist", href: "/checklist", disabled: true },
 ];
 
 const Navbar = () => {
@@ -67,7 +67,8 @@ const Navbar = () => {
     return () => document.body.classList.remove("menu-open");
   }, [isOpen]);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, disabled?: boolean) => {
+    if (disabled) return;
     setIsOpen(false);
     if (!href.startsWith("#")) {
       window.location.href = href;
@@ -109,9 +110,10 @@ const Navbar = () => {
             {navItems.map((item) => (
               <a
                 key={item.label}
-                href={item.href}
-                onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }}
-                className={`nav-link ${activeSection === item.href.replace("#", "").replace("/", "") ? "nav-link-active" : ""}`}
+                href={item.disabled ? undefined : item.href}
+                onClick={(e) => { e.preventDefault(); handleNavClick(item.href, item.disabled); }}
+                className={`nav-link ${item.disabled ? "opacity-40 cursor-not-allowed pointer-events-none" : activeSection === item.href.replace("#", "").replace("/", "") ? "nav-link-active" : ""}`}
+                aria-disabled={item.disabled}
               >
                 {item.label}
               </a>
@@ -161,11 +163,10 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <a
                   key={item.label}
-                  href={item.href}
-                  onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }}
-                  className={`nav-link py-3 px-4 rounded-lg hover:bg-primary-foreground/10 ${
-                    activeSection === item.href.replace("#", "").replace("/", "") ? "bg-primary-foreground/10 nav-link-active" : ""
-                  }`}
+                  href={item.disabled ? undefined : item.href}
+                  onClick={(e) => { e.preventDefault(); handleNavClick(item.href, item.disabled); }}
+                  className={`nav-link py-3 px-4 rounded-lg ${item.disabled ? "opacity-40 cursor-not-allowed pointer-events-none" : `hover:bg-primary-foreground/10 ${activeSection === item.href.replace("#", "").replace("/", "") ? "bg-primary-foreground/10 nav-link-active" : ""}`}`}
+                  aria-disabled={item.disabled}
                 >
                   {item.label}
                 </a>

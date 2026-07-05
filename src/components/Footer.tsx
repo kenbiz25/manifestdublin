@@ -83,7 +83,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <span className="text-primary-foreground/70">
-                  1 O'Connell Street Lower,<br /> North City - Dublin, Ireland
+                  67a Pearse St,<br /> Dublin, D02 WD62
                 </span>
               </li>
               <li className="flex items-center gap-3">

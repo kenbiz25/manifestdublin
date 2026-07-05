@@ -212,8 +212,8 @@ const ContactSection = () => {
                   <div>
                     <p className="font-semibold text-primary">Address</p>
                     <p className="text-muted-foreground">
-                      1 O'Connell Street Lower<br />
-                      North City, Dublin, Ireland
+                      67a Pearse St<br />
+                      Dublin, D02 WD62
                     </p>
                   </div>
                 </div>
